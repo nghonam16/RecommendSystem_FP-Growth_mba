@@ -1,0 +1,16 @@
+pandas
+openpyxl
+mlxtend
+matplotlib
+seaborn
+numpy
+scikit-learn
+fastapi
+uvicorn
+streamlit
+gradio
+sqlalchemy
+pydantic
+
+# for machine learning and deep learning
+torch
