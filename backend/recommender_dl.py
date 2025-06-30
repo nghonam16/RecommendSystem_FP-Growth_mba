@@ -19,7 +19,8 @@ class NCF(torch.nn.Module):
 
 class DLRecommender:
     def __init__(self, ckpt_path: str | Path):
-        ckpt = torch.load(ckpt_path, map_location="cpu")
+        ckpt = torch.load(ckpt_path, map_location="cpu", weights_only=False)
+
 
         self.user2idx = ckpt["user2idx"]
         self.item2idx = ckpt["item2idx"]
