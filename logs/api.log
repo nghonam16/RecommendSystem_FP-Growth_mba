@@ -11,3 +11,38 @@
 2025-06-30 23:48:17 | INFO     | uvicorn.error | Waiting for application shutdown.
 2025-06-30 23:48:17 | INFO     | uvicorn.error | Application shutdown complete.
 2025-06-30 23:48:17 | INFO     | uvicorn.error | Finished server process [30556]
+2025-07-02 16:29:56 | INFO     | backend.main | Loaded FP‑Growth rules
+2025-07-02 16:29:56 | INFO     | backend.main | Loaded NCF model
+2025-07-02 16:29:56 | INFO     | uvicorn.error | Started server process [25372]
+2025-07-02 16:29:56 | INFO     | uvicorn.error | Waiting for application startup.
+2025-07-02 16:29:56 | INFO     | uvicorn.error | Application startup complete.
+2025-07-02 16:30:18 | INFO     | backend.main | by‑user request user_id=112 top_k=5
+2025-07-02 16:30:18 | INFO     | backend.main | GET /recommend/by-user | 404 | 4.81 ms
+2025-07-02 16:30:18 | INFO     | uvicorn.access | 127.0.0.1:57201 - "GET /recommend/by-user?user_id=112&top_k=5 HTTP/1.1" 404
+2025-07-02 16:30:25 | INFO     | backend.main | by‑user request user_id=112 top_k=5
+2025-07-02 16:30:25 | INFO     | backend.main | GET /recommend/by-user | 404 | 1.65 ms
+2025-07-02 16:30:25 | INFO     | uvicorn.access | 127.0.0.1:57207 - "GET /recommend/by-user?user_id=112&top_k=5 HTTP/1.1" 404
+2025-07-02 16:30:25 | INFO     | backend.main | GET /favicon.ico | 404 | 0.35 ms
+2025-07-02 16:30:25 | INFO     | uvicorn.access | 127.0.0.1:57207 - "GET /favicon.ico HTTP/1.1" 404
+2025-07-02 16:31:36 | INFO     | backend.main | by‑item request item=alarm clock bakelike green top_k=3
+2025-07-02 16:31:36 | INFO     | backend.main | GET /recommend/by-item | 200 | 3.43 ms
+2025-07-02 16:31:36 | INFO     | uvicorn.access | 127.0.0.1:57269 - "GET /recommend/by-item?item=alarm%20clock%20bakelike%20green&top_k=3%0A HTTP/1.1" 200
+2025-07-02 16:33:28 | INFO     | uvicorn.error | Shutting down
+2025-07-02 16:33:28 | INFO     | uvicorn.error | Waiting for application shutdown.
+2025-07-02 16:33:28 | INFO     | uvicorn.error | Application shutdown complete.
+2025-07-02 16:33:28 | INFO     | uvicorn.error | Finished server process [25372]
+2025-07-02 16:35:28 | INFO     | backend.main | Loaded FP‑Growth rules
+2025-07-02 16:35:28 | INFO     | backend.main | Loaded NCF model
+2025-07-02 16:35:28 | INFO     | uvicorn.error | Started server process [28656]
+2025-07-02 16:35:28 | INFO     | uvicorn.error | Waiting for application startup.
+2025-07-02 16:35:28 | INFO     | uvicorn.error | Application startup complete.
+2025-07-02 16:35:43 | INFO     | backend.main | by‑item request item=alarm clock bakelike green top_k=3
+2025-07-02 16:35:43 | INFO     | backend.main | GET /recommend/by-item | 200 | 2.86 ms
+2025-07-02 16:35:43 | INFO     | uvicorn.access | 127.0.0.1:57499 - "GET /recommend/by-item?item=alarm+clock+bakelike+green&top_k=3 HTTP/1.1" 200
+2025-07-02 16:36:19 | INFO     | backend.main | by‑item request item=bread top_k=10
+2025-07-02 16:36:19 | INFO     | backend.main | GET /recommend/by-item | 404 | 1.71 ms
+2025-07-02 16:36:19 | INFO     | uvicorn.access | 127.0.0.1:57506 - "GET /recommend/by-item?item=bread&top_k=10 HTTP/1.1" 404
+2025-07-02 16:37:04 | INFO     | uvicorn.error | Shutting down
+2025-07-02 16:37:04 | INFO     | uvicorn.error | Waiting for application shutdown.
+2025-07-02 16:37:04 | INFO     | uvicorn.error | Application shutdown complete.
+2025-07-02 16:37:04 | INFO     | uvicorn.error | Finished server process [28656]
