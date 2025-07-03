@@ -1,7 +1,7 @@
 __pycache__/
 *.pyc
-*.db
-*.xlsx
-*.csv
+*.ipynb
 logs/
-notebooks/
+.notebooks/
+.env
+
