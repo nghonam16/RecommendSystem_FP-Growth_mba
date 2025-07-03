@@ -1,0 +1,22 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+RUN apt-get update && apt-get install -y build-essential && rm -rf /var/lib/apt/lists/*
+
+COPY backend/ backend/
+COPY fp_growth_mba/ fp_growth_mba/
+COPY data/ data/
+COPY models/ models/
+COPY requirements.txt .
+COPY docker/profiles.yml /root/.dbt/profiles.yml
+
+RUN pip install --no-cache-dir -r requirements.txt && \
+    pip install dbt-core dbt-sqlite
+
+WORKDIR /app/fp_growth_mba
+RUN dbt deps && dbt seed && dbt run
+
+EXPOSE 8000
+
+CMD ["uvicorn", "backend.main:app", "--host", "0.0.0.0", "--port", "8000"]

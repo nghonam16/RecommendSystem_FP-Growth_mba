@@ -1,0 +1,30 @@
+version: "3.9"
+
+services:
+  backend:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.backend
+    container_name: fp_growth_backend
+    volumes:
+      - ../data:/app/data
+      - ../fp_growth_mba:/app/fp_growth_mba
+      - ../models:/app/models
+      - ../backend:/app/backend
+      - ../docker/profiles.yml:/root/.dbt/profiles.yml
+    ports:
+      - "8000:8000"
+    working_dir: /app
+    command: uvicorn backend.main:app --host 0.0.0.0 --port 8000
+
+  ui:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.ui
+    container_name: fp_growth_ui
+    volumes:
+      - ../ui:/app/ui
+    ports:
+      - "8501:8501"
+    working_dir: /app/ui
+    command: streamlit run app.py
