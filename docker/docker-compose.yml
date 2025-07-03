@@ -5,6 +5,13 @@ services:
     build:
       context: ..
       dockerfile: docker/Dockerfile.backend
+      command: > 
+        bash -c "
+          dbt deps && 
+          dbt seed && 
+          dbt run && 
+          uvicorn backend.main:app --host 0.0.0.0 --port 8000
+        "
     container_name: fp_growth_backend
     volumes:
       - ../data:/app/data
