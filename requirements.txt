@@ -6,7 +6,7 @@ seaborn
 numpy
 scikit-learn
 fastapi
-uvicorn
+uvicorn[standard]
 streamlit
 gradio
 sqlalchemy
@@ -14,3 +14,7 @@ pydantic
 
 # for machine learning and deep learning
 torch
+
+# for dbt
+dbt-core
+dbt-sqlite
