@@ -1,9 +1,8 @@
-# ui/streamlit_app.py
 import streamlit as st
 import requests
 import json
 
-API_URL = "http://localhost:8000"  # FastAPI endpoint
+API_URL = "http://localhost:8000"
 
 st.set_page_config(page_title="Hybrid Recommender UI", page_icon="🧠")
 
@@ -11,9 +10,9 @@ st.title("🧠 Hybrid Recommender System")
 st.caption("Powered by FP-Growth + Deep Learning (NCF)")
 
 tab1, tab2, tab3 = st.tabs(
-    ["🛒 Recommend by Item (FP-Growth)",
-     "👤 Recommend by User (NCF)",
-     "✅ Quick Test"]
+    ["Recommend by Item (FP-Growth)",
+     "Recommend by User (NCF)",
+     "Quick Test"]
 )
 
 with tab1:
