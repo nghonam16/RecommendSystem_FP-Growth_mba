@@ -1,37 +1,34 @@
-version: "3.9"
+version: '3.8'
 
 services:
   backend:
     build:
       context: ..
       dockerfile: docker/Dockerfile.backend
-      command: > 
-        bash -c "
-          dbt deps && 
-          dbt seed && 
-          dbt run && 
-          uvicorn backend.main:app --host 0.0.0.0 --port 8000
-        "
-    container_name: fp_growth_backend
+    command: >
+      bash -c "
+        dbt deps &&
+        dbt seed &&
+        dbt run &&
+        uvicorn backend.main:app --host 0.0.0.0 --port 8000
+      "
+    ports:
+      - "8000:8000"
     volumes:
-      - ../data:/app/data
       - ../fp_growth_mba:/app/fp_growth_mba
+      - ../data:/app/data
       - ../models:/app/models
       - ../backend:/app/backend
       - ../docker/profiles.yml:/root/.dbt/profiles.yml
-    ports:
-      - "8000:8000"
-    working_dir: /app
-    command: uvicorn backend.main:app --host 0.0.0.0 --port 8000
-
   ui:
     build:
       context: ..
       dockerfile: docker/Dockerfile.ui
-    container_name: fp_growth_ui
-    volumes:
-      - ../ui:/app/ui
+    environment:
+      - API_URL=http://backend:8000
     ports:
-      - "8501:8501"
-    working_dir: /app/ui
-    command: streamlit run app.py
+      - "8501:8501"       # Streamlit
+    volumes:
+      - ../ui:/app/ui     # hot‑reload source nếu cần
+    depends_on:
+      - backend
