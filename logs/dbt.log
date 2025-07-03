@@ -1,0 +1,92 @@
+[0m16:42:44.383503 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000230ECC89890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000230ECEDCC90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000230ECEDD150>]}
+
+
+============================== 16:42:44.386508 | 88639496-8a9b-44e2-8a51-83d77bdffd29 ==============================
+[0m16:42:44.386508 [info ] [MainThread]: Running with dbt=1.10.2
+[0m16:42:44.387508 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'logs', 'profiles_dir': 'C:\\Users\\nghoo\\.dbt', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt init dbt', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True'}
+[0m16:42:44.399657 [info ] [MainThread]: Creating dbt configuration folder at C:\Users\nghoo\.dbt
+[0m16:44:06.224646 [debug] [MainThread]: Starter project path: C:\Users\nghoo\AppData\Local\anaconda3\envs\fp-growth_env\Lib\site-packages\dbt\include\starter_project
+[0m16:44:06.303108 [info ] [MainThread]: 
+Your new dbt project "fp_growth_mba" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m16:44:06.305107 [info ] [MainThread]: Setting up your profile.
+[0m16:45:00.859251 [info ] [MainThread]: Profile fp_growth_mba written to C:\Users\nghoo\.dbt\profiles.yml using target's sample configuration. Once updated, you'll be able to start developing with dbt.
+[0m16:45:00.863251 [debug] [MainThread]: Command `dbt init` succeeded at 16:45:00.861251 after 136.53 seconds
+[0m16:45:00.864250 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000230ECEE6610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000230ECF0B310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000230E9835350>]}
+[0m16:45:00.865250 [debug] [MainThread]: Flushing usage events
+[0m16:45:01.882952 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m21:58:54.665155 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000297EE8FC290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000297EE8FC790>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000297EE8FFB50>]}
+
+
+============================== 21:58:54.672775 | 142d6697-8c07-4753-92f0-d07d6e6c6574 ==============================
+[0m21:58:54.672775 [info ] [MainThread]: Running with dbt=1.10.2
+[0m21:58:54.673775 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'logs', 'version_check': 'True', 'profiles_dir': 'C:\\Users\\nghoo\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt debug', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True'}
+[0m21:58:54.709456 [info ] [MainThread]: dbt version: 1.10.2
+[0m21:58:54.710454 [info ] [MainThread]: python version: 3.11.13
+[0m21:58:54.710454 [info ] [MainThread]: python path: C:\Users\nghoo\AppData\Local\anaconda3\envs\fp-growth_env\python.exe
+[0m21:58:54.711456 [info ] [MainThread]: os info: Windows-10-10.0.26100-SP0
+[0m21:58:54.747467 [info ] [MainThread]: Using profiles dir at C:\Users\nghoo\.dbt
+[0m21:58:54.748466 [info ] [MainThread]: Using profiles.yml file at C:\Users\nghoo\.dbt\profiles.yml
+[0m21:58:54.749468 [info ] [MainThread]: Using dbt_project.yml file at D:\Documents\My Project\FP-Growth_mba\dbt_project.yml
+[0m21:58:54.750469 [info ] [MainThread]: adapter type: sqlite
+[0m21:58:54.751471 [info ] [MainThread]: adapter version: 1.10.0
+[0m21:58:54.751471 [info ] [MainThread]: Configuration:
+[0m21:58:54.752467 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m21:58:54.753469 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m21:58:54.754469 [info ] [MainThread]: Required dependencies:
+[0m21:58:54.754469 [debug] [MainThread]: Executing "git --help"
+[0m21:58:54.792992 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m21:58:54.793992 [debug] [MainThread]: STDERR: "b''"
+[0m21:58:54.793992 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m21:58:54.794990 [info ] [MainThread]: Connection:
+[0m21:58:54.794990 [info ] [MainThread]:   database: ../data/fpgrowth.db
+[0m21:58:54.795990 [info ] [MainThread]:   schema: main
+[0m21:58:54.795990 [info ] [MainThread]:   schemas_and_paths: {'main': '../data'}
+[0m21:58:54.796989 [info ] [MainThread]:   schema_directory: ../data
+[0m21:58:54.797994 [info ] [MainThread]: Registered adapter: sqlite=1.10.0
+[0m21:58:54.936230 [debug] [MainThread]: Acquiring new sqlite connection 'debug'
+[0m21:58:55.042006 [debug] [MainThread]: Using sqlite connection "debug"
+[0m21:58:55.042006 [debug] [MainThread]: On debug: select 1 as id
+[0m21:58:55.043007 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m21:58:55.048117 [debug] [MainThread]: SQL status: OK in 0.005 seconds
+[0m21:58:55.049118 [debug] [MainThread]: On debug: Close
+[0m21:58:55.050121 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m21:58:55.051119 [info ] [MainThread]: [31m1 check failed:[0m
+[0m21:58:55.051119 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <D:\Documents\My Project\FP-Growth_mba\dbt_project.yml> not found
+
+[0m21:58:55.053120 [debug] [MainThread]: Command `dbt debug` failed at 21:58:55.052120 after 0.46 seconds
+[0m21:58:55.053120 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m21:58:55.053120 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000297F2F408D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000297F2F40F50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000297EB3A9350>]}
+[0m21:58:55.054119 [debug] [MainThread]: Flushing usage events
+[0m21:58:56.223242 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:11:55.003653 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DC0A473350>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DC0943E490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DC0A46BA90>]}
+
+
+============================== 22:11:55.007164 | 7fbe8715-2fc0-4e11-99dc-7e885be4997e ==============================
+[0m22:11:55.007164 [info ] [MainThread]: Running with dbt=1.10.2
+[0m22:11:55.008167 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'logs', 'profiles_dir': 'C:\\Users\\nghoo\\.dbt', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'target_path': 'None', 'invocation_command': 'dbt run', 'send_anonymous_usage_stats': 'True'}
+[0m22:11:55.008167 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path D:\Documents\My Project\FP-Growth_mba\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m22:11:55.009162 [debug] [MainThread]: Command `dbt run` failed at 22:11:55.009162 after 0.06 seconds
+[0m22:11:55.009162 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DC085D3410>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DC09446210>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DC0A46B150>]}
+[0m22:11:55.010166 [debug] [MainThread]: Flushing usage events
+[0m22:11:56.187847 [debug] [MainThread]: An error was encountered while trying to flush usage events
