@@ -15,7 +15,6 @@ RUN pip install --no-cache-dir -r requirements.txt && \
     pip install dbt-core dbt-sqlite
 
 WORKDIR /app/fp_growth_mba
-RUN dbt deps && dbt seed && dbt run
 
 EXPOSE 8000
 
