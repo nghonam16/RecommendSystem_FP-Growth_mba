@@ -5,25 +5,16 @@ services:
     build:
       context: ..
       dockerfile: docker/Dockerfile.backend
-
-    command: >
-      bash -c "
-        dbt deps  --project-dir /app/fp_growth_mba &&
-        dbt seed  --project-dir /app/fp_growth_mba &&
-        dbt run   --project-dir /app/fp_growth_mba &&
-        uvicorn backend.main:app --host 0.0.0.0 --port 8000
-      "
-
+    image: fpgrowth-backend:latest
+    container_name: backend-container
     ports:
       - "8000:8000"
-
     volumes:
       - ../backend:/app/backend        
       - ../fp_growth_mba:/app/fp_growth_mba
       - ../data:/app/data                 
       - ../models:/app/models           
       - ../docker/profiles.yml:/root/.dbt/profiles.yml
-
     environment:
       - PYTHONPATH=/app 
 
@@ -31,15 +22,13 @@ services:
     build:
       context: ..
       dockerfile: docker/Dockerfile.ui
-
-    environment:
-      - API_URL=http://backend:8000
-
+    image: fpgrowth-ui:latest
+    container_name: ui-container
     ports:
       - "8501:8501"
-
+    environment:
+      - API_URL=http://backend:8000
     volumes:
       - ../ui:/app/ui
-
     depends_on:
       - backend
