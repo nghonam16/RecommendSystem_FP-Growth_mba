@@ -16,14 +16,14 @@ logger = logging.getLogger(__name__)
 app = FastAPI(title="Hybrid Recommender API", version="1.0.0")
 
 try:
-    fp_rec = FPGrowthRecommender(Path("/app/data/rules.csv"))
+    fp_rec = FPGrowthRecommender(Path("data/rules.csv"))
     logger.info("Loaded FP‑Growth rules")
 except Exception as e:
     logger.exception("Failed to load FP‑Growth rules: %s", e)
     raise
 
 try:
-    dl_rec = DLRecommender(Path("/app/models/ncf_model.pt"))
+    dl_rec = DLRecommender(Path("models/ncf_model.pt"))
     logger.info("Loaded NCF model")
 except Exception as e:
     logger.exception("Failed to load DL model: %s", e)
