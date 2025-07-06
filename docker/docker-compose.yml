@@ -8,13 +8,13 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - ../backend:/app/backend        
-      - ../fp_growth_mba:/app/fp_growth_mba
-      - ../data:/app/data
-      - ../models:/app/models           
-      - ./profiles.yml:/root/.dbt/profiles.yml
+      - "D:/Documents/My Project/FP-Growth_mba/backend:/app/backend"
+      - "D:/Documents/My Project/FP-Growth_mba/fp_growth_mba:/app/fp_growth_mba"
+      - "D:/Documents/My Project/FP-Growth_mba/data:/app/data"
+      - "D:/Documents/My Project/FP-Growth_mba/models:/app/models"
+      - "D:/Documents/My Project/FP-Growth_mba/docker/profiles.yml:/root/.dbt/profiles.yml"
     environment:
-      - PYTHONPATH=/app 
+      - PYTHONPATH=/app
 
   ui:
     build:
@@ -24,9 +24,7 @@ services:
     container_name: ui-container
     ports:
       - "8501:8501"
-    environment:
-      - API_URL=http://backend:8000
     volumes:
-      - ../ui:/app/ui
+      - "D:/Documents/My Project/FP-Growth_mba/ui:/app/ui"
     depends_on:
       - backend
