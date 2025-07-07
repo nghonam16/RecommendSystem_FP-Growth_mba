@@ -15,7 +15,7 @@ services:
       - "D:/Documents/My Project/FP-Growth_mba/docker/profiles.yml:/root/.dbt/profiles.yml"
     environment:
       - PYTHONPATH=/app
-
+    entrypoint: ["tail", " -f", "/dev/null"] 
   ui:
     build:
       context: ..
