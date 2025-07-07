@@ -47,13 +47,6 @@
 2025-07-02 16:37:04 | INFO     | uvicorn.error | Application shutdown complete.
 2025-07-02 16:37:04 | INFO     | uvicorn.error | Finished server process [28656]
 2025-07-04 19:29:17 | ERROR    | backend.main | Failed to load FP‑Growth rules: Rules file not found: \app\data\rules.csv
-Traceback (most recent call last):
-  File "D:\Documents\My Project\FP-Growth_mba\backend\main.py", line 19, in <module>
-    fp_rec = FPGrowthRecommender(Path("/app/data/rules.csv"))
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Documents\My Project\FP-Growth_mba\backend\recommender_fp.py", line 15, in __init__
-    raise FileNotFoundError(f"Rules file not found: {self.rule_path}")
-FileNotFoundError: Rules file not found: \app\data\rules.csv
 2025-07-04 19:31:57 | INFO     | backend.main | Loaded FP‑Growth rules
 2025-07-04 19:31:57 | INFO     | backend.main | Loaded NCF model
 2025-07-04 19:31:57 | INFO     | uvicorn.error | Started server process [15816]
