@@ -15,15 +15,15 @@ services:
       - "D:/Documents/My Project/FP-Growth_mba/docker/profiles.yml:/root/.dbt/profiles.yml"
     environment:
       - PYTHONPATH=/app
-    entrypoint: ["tail", " -f", "/dev/null"] 
+    entrypoint: ["tail", "-f", "/dev/null"] 
   ui:
     build:
       context: ..
       dockerfile: docker/Dockerfile.ui
     image: fpgrowth-ui:latest
     container_name: ui-container
-    entrypoint: 
-      - API_URL = http://backend:8000
+    environment: 
+      - API_URL=http://backend:8000
     ports:
       - "8501:8501"
     volumes:
