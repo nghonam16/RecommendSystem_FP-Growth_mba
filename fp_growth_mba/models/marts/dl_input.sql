@@ -1,5 +1,3 @@
-
-
 select
     cast(CustomerID as text) as user_id,
     item as item_id

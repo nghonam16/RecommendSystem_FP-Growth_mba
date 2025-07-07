@@ -1,4 +1,3 @@
-
 select
     InvoiceNo as transaction_id,
     group_concat(item, ',') as items
