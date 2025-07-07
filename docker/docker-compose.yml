@@ -22,6 +22,8 @@ services:
       dockerfile: docker/Dockerfile.ui
     image: fpgrowth-ui:latest
     container_name: ui-container
+    entrypoint: 
+      - API_URL = http://backend:8000
     ports:
       - "8501:8501"
     volumes:
