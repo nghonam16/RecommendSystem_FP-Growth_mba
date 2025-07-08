@@ -1,52 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
 body {
-  font-family: "Segoe UI", Arial, sans-serif;
-  background-color: #fdfdfd;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(145deg, #fef9f8 0%, #eaf7ff 100%);
   color: #333;
 }
 
-header { visibility: hidden; }
-footer { visibility: hidden; }
+header, footer {
+  visibility: hidden;
+}
 
 h2, h3 {
   text-align: center;
-  margin-bottom: 0.5rem;
   color: #ff6f61;
+  margin-bottom: 0.5rem;
 }
 
 hr {
   border: 0;
   height: 1px;
-  background: #e0e0e0;
+  background: #ddd;
   margin: 1.5rem 0;
 }
 
 .recommend-box {
-  background-color: #ffffff;
-  border-radius: 16px;
-  padding: 1.25rem 1.5rem;
-  margin-bottom: 1.25rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
 }
 
 .recommend-item {
   display: inline-block;
-  margin: 0.4rem 0.4rem;
-  padding: 0.45rem 0.9rem;
-  background-color: #eaf7ff;
-  border-radius: 8px;
+  margin: 0.4rem;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, #e8f4fc, #ffffff);
+  border: 1px solid #cce7f6;
+  border-radius: 12px;
   font-weight: 600;
   font-size: 0.95rem;
-  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.recommend-item:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #ffe2e5, #ffffff);
+  border-color: #ffcad4;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 button[kind="primary"] {
-  background: linear-gradient(90deg, #ff8360, #ff6f61);
+  background: linear-gradient(to right, #ff8360, #ff6f61);
   border: none;
   color: #fff;
+  border-radius: 30px;
+  font-weight: bold;
+  padding: 0.6rem 1.5rem;
 }
 
 button[kind="primary"]:hover {
-  filter: brightness(1.05);
+  filter: brightness(1.1);
 }
 
 div[data-testid="stSpinner"] > div {

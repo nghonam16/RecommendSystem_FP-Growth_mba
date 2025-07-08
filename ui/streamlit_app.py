@@ -37,6 +37,7 @@ with st.form("hybrid_form"):
         bought_items = st.text_input(
             "Purchased products (separated by commas):",
             placeholder="alarm clock bakelike green, red mug",
+            label_visibility="visible"
         )
 
     # Slider for number of suggestions per source
