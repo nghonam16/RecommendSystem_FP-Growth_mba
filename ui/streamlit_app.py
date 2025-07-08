@@ -1,92 +1,121 @@
 import streamlit as st
 import requests
-import json
 import os
+import pathlib
 
-API_URL = os.getenv("API_URL", "http://localhost:8000")
+# Set up API URL and page configuration
+API_URL   = os.getenv("API_URL", "http://localhost:8000")
+PAGE_ICON = "🧠"
+PAGE_TITLE = "Hybrid Recommender UI"
 
-st.set_page_config(page_title="Hybrid Recommender UI", page_icon="🧠", layout="centered")
+# Configure Streamlit page
+st.set_page_config(page_title=PAGE_TITLE,
+                   page_icon=PAGE_ICON,
+                   layout="centered")
 
-st.title("🧠 Hybrid Recommender System")
-st.caption("Powered by **FP-Growth** + **Neural Collaborative Filtering (NCF)**")
+# Load custom CSS for styling
+css_path = pathlib.Path(__file__).parent / "style.css"
+if css_path.exists():
+    st.markdown(f"<style>{css_path.read_text()}</style>",
+                unsafe_allow_html=True)
 
-tab1, tab2, tab3 = st.tabs([
-    "🛒 Recommend by Item (FP-Growth)",
-    "👤 Recommend by User (NCF)",
-    "⚡ Quick Test"
-])
+# Hide default Streamlit header and footer
+st.markdown("<h2>🛍️Hi, bro!</h2>", unsafe_allow_html=True)
+st.markdown("---")
 
-# Tab 1: Recommend by Item (FP-Growth)
-with tab1:
-    st.subheader("📦 Rule-based Suggestions (Association Rules)")
-    with st.form(key="item_form"):
-        item = st.text_input("Enter product name:", placeholder="e.g., alarm clock bakelike green")
-        top_k = st.slider("Number of suggestions (Top K):", 1, 10, 5)
-        submit_item = st.form_submit_button("🔍 Get Suggestions")
+# Main content of the app
+with st.form("hybrid_form"):
+    st.subheader("Enter information to get suggestions")
 
-    if submit_item:
-        if item.strip() == "":
-            st.warning("⚠️ Please enter a product name.")
-        else:
-            with st.spinner("Fetching suggestions..."):
-                try:
-                    res = requests.get(f"{API_URL}/recommend/by-item", params={"item": item, "top_k": top_k})
-                    res.raise_for_status()
-                    suggestions = res.json().get("suggestions", [])
-                    if suggestions:
-                        with st.expander("📋 Suggested items:"):
-                            for i, s in enumerate(suggestions, 1):
-                                st.markdown(f"{i}. **{s}**")
-                    else:
-                        st.info("No suggestions found for this item.")
-                except Exception as e:
-                    st.error(f"❌ {e}")
+    # Input fields for user ID and purchased items
+    col1, col2 = st.columns(2)
+    with col1:
+        user_id = st.number_input("User ID (NCF):",
+                                  min_value=1, step=1, value=1)
+    # Input for purchased items
+    with col2:
+        bought_items = st.text_input(
+            "Purchased products (separated by commas):",
+            placeholder="alarm clock bakelike green, red mug",
+        )
 
-# Tab 2: Recommend by User (NCF)
-with tab2:
-    st.subheader("🎯 Personalized Suggestions (Deep Learning)")
+    # Slider for number of suggestions per source
+    top_k = st.slider("Number of suggestions per source (Top K):",
+                      min_value=1, max_value=10, value=3)
+    submitted = st.form_submit_button("🚀 SUGGESTION DISPLAY")
 
-    with st.form(key="user_form"):
-        user_id = st.number_input("Enter User ID:", min_value=1, step=1)
-        top_k_user = st.slider("Number of suggestions (Top K):", 1, 10, 5, key="user_topk")
-        submit_user = st.form_submit_button("👁️ Get Personalized Recommendations")
+# Display the form submission result
+if submitted:
+    st.markdown("---")
+    with st.spinner("Getting suggestions from the system ... please wait..."):
+        # Initialize empty suggestion lists
+        dl_suggestions = []
+        try:
+            resp_dl = requests.get(
+                f"{API_URL}/recommend/by-user",
+                params={"user_id": user_id, "top_k": top_k},
+                timeout=10,
+            )
+            resp_dl.raise_for_status()
+            dl_suggestions = resp_dl.json().get("suggestions", [])
+        except Exception as e:
+            st.error(f"❌ Error retrieving NCF suggestion: {e}")
 
-    if submit_user:
-        with st.spinner("Fetching personalized recommendations..."):
+        # Display NCF suggestions
+        fp_suggestions = []
+        bought_list = [item.strip() for item in bought_items.split(',')
+                       if item.strip()]
+        for item in bought_list:
             try:
-                res = requests.get(f"{API_URL}/recommend/by-user", params={"user_id": user_id, "top_k": top_k_user})
-                res.raise_for_status()
-                suggestions = res.json().get("suggestions", [])
-                if suggestions:
-                    with st.expander("📋 Recommended items:"):
-                        for i, s in enumerate(suggestions, 1):
-                            st.markdown(f"{i}. **{s}**")
-                else:
-                    st.info("No recommendations found for this user.")
-            except Exception as e:
-                st.error(f"❌ {e}")
-
-# Tab 3: Quick Test Case
-with tab3:
-    st.subheader("⚡ Predefined Test Case")
-    st.markdown("""
-    **Test**: Call `/recommend/by-item` with  
-    - `item = "alarm clock bakelike green"`  
-    - `top_k = 3`
-    """)
-
-    if st.button("▶️ Run Test Case"):
-        with st.spinner("Calling API..."):
-            try:
-                resp = requests.get(
+                resp_fp = requests.get(
                     f"{API_URL}/recommend/by-item",
-                    params={"item": "alarm clock bakelike green", "top_k": 3},
-                    timeout=5
+                    params={"item": item, "top_k": top_k},
+                    timeout=10,
                 )
-                if resp.status_code == 200:
-                    st.success("✅ 200 OK - Successful Response")
-                    st.code(json.dumps(resp.json(), indent=2), language="json")
-                else:
-                    st.error(f"❌ Status {resp.status_code}: {resp.text}")
+                resp_fp.raise_for_status()
+                fp_suggestions.extend(
+                    resp_fp.json().get("suggestions", []))
             except Exception as e:
-                st.error(f"❌ Error: {e}")
+                st.error(f"❌ FP-Growth error for '{item}': {e}")
+
+        fp_suggestions = [s for s in dict.fromkeys(fp_suggestions)
+                          if s not in bought_list][:top_k]
+
+    # Display the suggestions
+    if dl_suggestions:
+        st.markdown(
+            f"""
+<div class='recommend-box'>
+  <h3>🧠 Smart suggestions for you (AI):</h3>
+  <div>
+    {' '.join(f"<span class='recommend-item'>📦 {s}</span>"
+              for s in dl_suggestions)}
+  </div>
+</div>
+""",
+            unsafe_allow_html=True,
+        )
+    else:
+        st.info("No AI suggestion found.")
+
+    if fp_suggestions:
+        bought_str = ", ".join(f"<strong>{b}</strong>" for b in bought_list)
+        st.markdown(
+            f"""
+<div class='recommend-box'>
+  <h3>🧾 Suggestions based on common behavior (Community data):</h3>
+  <p>👉 Because you bought {bought_str}, others often buy too.:</p>
+  <div>
+    {' '.join(f"<span class='recommend-item'>📦 {s}</span>"
+              for s in fp_suggestions)}
+  </div>
+</div>
+""",
+            unsafe_allow_html=True,
+        )
+    else:
+        st.info("No FP-Growth suggestions found..")
+
+    st.markdown("---")
+
+st.caption("Powered by **FP‑Growth** + **Neural Collaborative Filtering (NCF)**")
