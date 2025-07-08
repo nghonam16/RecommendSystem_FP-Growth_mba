@@ -1,0 +1,54 @@
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #fdfdfd;
+  color: #333;
+}
+
+header { visibility: hidden; }
+footer { visibility: hidden; }
+
+h2, h3 {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: #ff6f61;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: #e0e0e0;
+  margin: 1.5rem 0;
+}
+
+.recommend-box {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.recommend-item {
+  display: inline-block;
+  margin: 0.4rem 0.4rem;
+  padding: 0.45rem 0.9rem;
+  background-color: #eaf7ff;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+button[kind="primary"] {
+  background: linear-gradient(90deg, #ff8360, #ff6f61);
+  border: none;
+  color: #fff;
+}
+
+button[kind="primary"]:hover {
+  filter: brightness(1.05);
+}
+
+div[data-testid="stSpinner"] > div {
+  color: #ff6f61;
+}
