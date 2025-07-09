@@ -262,3 +262,51 @@
 2025-07-08 18:19:05 | INFO     | uvicorn.error | Waiting for application shutdown.
 2025-07-08 18:19:05 | INFO     | uvicorn.error | Application shutdown complete.
 2025-07-08 18:19:05 | INFO     | uvicorn.error | Finished server process [27420]
+2025-07-09 14:26:45 | INFO     | uvicorn.error | Started server process [23516]
+2025-07-09 14:26:45 | INFO     | uvicorn.error | Waiting for application startup.
+2025-07-09 14:26:45 | INFO     | uvicorn.error | Application startup complete.
+2025-07-09 14:27:16 | INFO     | backend.main | by‑user request user_id=14911 top_k=5
+2025-07-09 14:27:16 | INFO     | backend.main | GET /recommend/by-user | 200 | 54.04 ms
+2025-07-09 14:27:16 | INFO     | uvicorn.access | 127.0.0.1:51984 - "GET /recommend/by-user?user_id=14911&top_k=5 HTTP/1.1" 200
+2025-07-09 14:27:18 | INFO     | backend.main | by‑item request item=charlotte bag suki design top_k=5
+2025-07-09 14:27:18 | INFO     | backend.main | GET /recommend/by-item | 200 | 1.83 ms
+2025-07-09 14:27:18 | INFO     | uvicorn.access | 127.0.0.1:51986 - "GET /recommend/by-item?item=charlotte+bag+suki+design&top_k=5 HTTP/1.1" 200
+2025-07-09 14:27:20 | INFO     | backend.main | by‑item request item=blue harmonica in box top_k=5
+2025-07-09 14:27:20 | INFO     | backend.main | GET /recommend/by-item | 200 | 1.51 ms
+2025-07-09 14:27:20 | INFO     | uvicorn.access | 127.0.0.1:51993 - "GET /recommend/by-item?item=blue+harmonica+in+box&top_k=5 HTTP/1.1" 200
+2025-07-09 14:27:22 | INFO     | backend.main | by‑item request item=paper chain kit vintage christmas top_k=5
+2025-07-09 14:27:22 | INFO     | backend.main | GET /recommend/by-item | 200 | 1.64 ms
+2025-07-09 14:27:22 | INFO     | uvicorn.access | 127.0.0.1:51995 - "GET /recommend/by-item?item=paper+chain+kit+vintage+christmas&top_k=5 HTTP/1.1" 200
+2025-07-09 14:27:24 | INFO     | backend.main | by‑item request item=set of 20 vintage christmas napkins top_k=5
+2025-07-09 14:27:24 | INFO     | backend.main | GET /recommend/by-item | 200 | 1.91 ms
+2025-07-09 14:27:24 | INFO     | uvicorn.access | 127.0.0.1:51998 - "GET /recommend/by-item?item=set+of+20+vintage+christmas+napkins&top_k=5 HTTP/1.1" 200
+2025-07-09 14:27:50 | INFO     | backend.main | by‑user request user_id=14911 top_k=5
+2025-07-09 14:27:50 | INFO     | backend.main | GET /recommend/by-user | 200 | 3.80 ms
+2025-07-09 14:27:50 | INFO     | uvicorn.access | 127.0.0.1:52051 - "GET /recommend/by-user?user_id=14911&top_k=5 HTTP/1.1" 200
+2025-07-09 14:27:52 | INFO     | backend.main | by‑item request item=charlotte bag suki design top_k=5
+2025-07-09 14:27:52 | INFO     | backend.main | GET /recommend/by-item | 200 | 1.06 ms
+2025-07-09 14:27:52 | INFO     | uvicorn.access | 127.0.0.1:52054 - "GET /recommend/by-item?item=charlotte+bag+suki+design&top_k=5 HTTP/1.1" 200
+2025-07-09 14:27:54 | INFO     | backend.main | by‑item request item=blue harmonica in box top_k=5
+2025-07-09 14:27:54 | INFO     | backend.main | GET /recommend/by-item | 200 | 1.99 ms
+2025-07-09 14:27:54 | INFO     | uvicorn.access | 127.0.0.1:52057 - "GET /recommend/by-item?item=blue+harmonica+in+box&top_k=5 HTTP/1.1" 200
+2025-07-09 14:27:56 | INFO     | backend.main | by‑item request item=paper chain kit vintage christmas top_k=5
+2025-07-09 14:27:56 | INFO     | backend.main | GET /recommend/by-item | 200 | 1.05 ms
+2025-07-09 14:27:56 | INFO     | uvicorn.access | 127.0.0.1:52061 - "GET /recommend/by-item?item=paper+chain+kit+vintage+christmas&top_k=5 HTTP/1.1" 200
+2025-07-09 14:28:19 | INFO     | backend.main | by‑user request user_id=12748 top_k=10
+2025-07-09 14:28:19 | INFO     | backend.main | GET /recommend/by-user | 200 | 3.45 ms
+2025-07-09 14:28:19 | INFO     | uvicorn.access | 127.0.0.1:52066 - "GET /recommend/by-user?user_id=12748&top_k=10 HTTP/1.1" 200
+2025-07-09 14:28:21 | INFO     | backend.main | by‑item request item=sweetheart ceramic trinket box top_k=10
+2025-07-09 14:28:21 | INFO     | backend.main | GET /recommend/by-item | 200 | 1.00 ms
+2025-07-09 14:28:21 | INFO     | uvicorn.access | 127.0.0.1:52068 - "GET /recommend/by-item?item=sweetheart+ceramic+trinket+box&top_k=10 HTTP/1.1" 200
+2025-07-09 14:28:23 | INFO     | backend.main | by‑item request item=hand warmer union jack top_k=10
+2025-07-09 14:28:23 | INFO     | backend.main | GET /recommend/by-item | 200 | 1.23 ms
+2025-07-09 14:28:23 | INFO     | uvicorn.access | 127.0.0.1:52071 - "GET /recommend/by-item?item=hand+warmer+union+jack&top_k=10 HTTP/1.1" 200
+2025-07-09 14:28:25 | INFO     | backend.main | by‑item request item=vintage snap cards top_k=10
+2025-07-09 14:28:25 | INFO     | backend.main | GET /recommend/by-item | 200 | 1.04 ms
+2025-07-09 14:28:25 | INFO     | uvicorn.access | 127.0.0.1:52073 - "GET /recommend/by-item?item=vintage+snap+cards&top_k=10 HTTP/1.1" 200
+2025-07-09 14:28:27 | INFO     | backend.main | by‑item request item=hand warmer red retrospot top_k=10
+2025-07-09 14:28:27 | INFO     | backend.main | GET /recommend/by-item | 200 | 1.20 ms
+2025-07-09 14:28:27 | INFO     | uvicorn.access | 127.0.0.1:52076 - "GET /recommend/by-item?item=hand+warmer+red+retrospot&top_k=10 HTTP/1.1" 200
+2025-07-09 14:28:58 | INFO     | backend.main | by‑item request item=alarm clock bakelike green top_k=10
+2025-07-09 14:28:58 | INFO     | backend.main | GET /recommend/by-item | 200 | 1.92 ms
+2025-07-09 14:28:58 | INFO     | uvicorn.access | 127.0.0.1:52088 - "GET /recommend/by-item?item=alarm%20clock%20bakelike%20green&top_k=10%0A HTTP/1.1" 200
