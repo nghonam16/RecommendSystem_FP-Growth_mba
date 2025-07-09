@@ -1,76 +1,108 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(145deg, #fef9f8 0%, #eaf7ff 100%);
-  color: #333;
+    background-color: #f5faff;
+    font-family: 'Poppins', sans-serif;
+    color: #212529;
+    line-height: 1.6;
 }
 
-header, footer {
-  visibility: hidden;
+/* Tiêu đề chính */
+h2 {
+    color: #189eff;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
 }
 
-h2, h3 {
-  text-align: center;
-  color: #ff6f61;
-  margin-bottom: 0.5rem;
+/* Tiêu đề bên trong hộp */
+.recommend-box h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #189eff;
+    margin-bottom: 12px;
 }
 
-hr {
-  border: 0;
-  height: 1px;
-  background: #ddd;
-  margin: 1.5rem 0;
-}
-
+/* Box chứa gợi ý */
 .recommend-box {
-    margin: 1rem 0;
-    padding: 1rem;
+    background: #ffffff;
     border-radius: 12px;
-    background: #2b2b2b;
-    color: white;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease-in-out;
 }
 
+.recommend-box:hover {
+    transform: translateY(-3px);
+}
+
+/* Thẻ sản phẩm */
 .recommend-item {
-    background: #3b3b3b;
-    border-radius: 10px;
-    padding: 0.75rem 1rem;
-    margin: 0.5rem 0;
+    background-color: #eaf6ff;
+    border-left: 6px solid #189eff;
+    padding: 14px 18px;
+    margin: 12px 0;
+    border-radius: 8px;
     font-size: 16px;
-    line-height: 1.4;
     font-weight: 500;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
-}
-
-.item-price, .item-cat {
-    display: block;
-    font-size: 15px;
-    color: #ffd700;
-}
-.item-cat {
-    color: #80dfff;
+    transition: background-color 0.2s ease-in-out;
+    color: #1c1c1e;
 }
 
 .recommend-item:hover {
-  transform: scale(1.05);
-  background: linear-gradient(135deg, #ffe2e5, #ffffff);
-  border-color: #ffcad4;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    background-color: #d8efff;
 }
 
-button[kind="primary"] {
-  background: linear-gradient(to right, #ff8360, #ff6f61);
-  border: none;
-  color: #fff;
-  border-radius: 30px;
-  font-weight: bold;
-  padding: 0.6rem 1.5rem;
+/* Giá sản phẩm */
+.item-price {
+    color: #f57c00; /* cam nổi */
+    font-weight: 600;
+    font-size: 16px;
 }
 
-button[kind="primary"]:hover {
-  filter: brightness(1.1);
+/* Danh mục sản phẩm */
+.item-cat {
+    color: #757575;
+    font-style: italic;
+    font-size: 14px;
 }
 
-div[data-testid="stSpinner"] > div {
-  color: #ff6f61;
+/* Nút bấm giống Tiki style */
+.stButton > button {
+    background-color: #189eff;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    border-radius: 8px;
+    padding: 10px 24px;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 10px;
+}
+
+.stButton > button:hover {
+    background-color: #0f7fd0;
+    transform: translateY(-1px);
+}
+
+/* Dropdown + MultiSelect spacing */
+[data-baseweb="select"] {
+    margin-bottom: 18px;
+}
+
+/* Responsive tweaks nếu cần */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 24px;
+    }
+    .recommend-box {
+        padding: 18px;
+    }
+    .recommend-item {
+        font-size: 15px;
+    }
 }
