@@ -1,8 +1,7 @@
 from __future__ import annotations
 
 from pathlib import Path
-from typing import List, Dict
-
+from typing import Dict, List
 import torch
 
 
@@ -24,28 +23,20 @@ class NCF(torch.nn.Module):
 
 
 class DLRecommender:
-    """
-    Neural Collaborative Filtering inference wrapper.
-
-    * Handles both str and int keys in user2idx/item2idx.
-    * Always returns list[str] of item_id (len <= top_k).
-    """
+    """Neural Collaborative Filtering inference wrapper."""
 
     def __init__(self, ckpt_path: str | Path):
         ckpt = torch.load(ckpt_path, map_location="cpu", weights_only=False)
 
-        # --- harmonize user/item mapping to int keys ---
-        raw_u2i: Dict[str, int] = ckpt["user2idx"]
+        # Harmonize user2idx → int keys
         self.user2idx: Dict[int, int] = {}
-        for k, v in raw_u2i.items():
+        for k, v in ckpt["user2idx"].items():
             try:
                 self.user2idx[int(k)] = v
             except ValueError:
-                # fallback keep as hash of str key (rare)
-                self.user2idx[k] = v
+                continue  # skip non‑int keys
 
-        raw_i2i: Dict[str, int] = ckpt["item2idx"]
-        self.item2idx: Dict[str, int] = {k: v for k, v in raw_i2i.items()}
+        self.item2idx: Dict[str, int] = {str(k): int(v) for k, v in ckpt["item2idx"].items()}
         self.idx2item: Dict[int, str] = {v: k for k, v in self.item2idx.items()}
 
         n_users = max(self.user2idx.values()) + 1
@@ -54,20 +45,13 @@ class DLRecommender:
         self.model = NCF(n_users, n_items).eval()
         self.model.load_state_dict(ckpt["model"])
 
-    # ------------------------------------------------------------------ #
-    # Public API
-    # ------------------------------------------------------------------ #
+    # ------------------------------------------------------------------
     @torch.inference_mode()
     def recommend(self, user_id: int | str, top_k: int = 5) -> List[str]:
-        """
-        Return up to `top_k` item_ids with highest predicted score for `user_id`.
-        If user not in mapping → return [].
-        """
-        # normalize user_id key (int preferred)
         try:
             uid_key = int(user_id)
         except ValueError:
-            uid_key = user_id  # keep as original if cannot cast
+            return []
 
         if uid_key not in self.user2idx:
             return []
