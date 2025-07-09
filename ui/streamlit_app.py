@@ -30,7 +30,7 @@ API_URL = os.getenv("API_URL", "http://localhost:8000")
 st.set_page_config("Hybrid Recommender UI", "🧠", layout="centered")
 css_path = pathlib.Path(__file__).parent / "style.css"
 if css_path.exists():
-    st.markdown(f"<style>{css_path.read_text()}</style>", unsafe_allow_html=True)
+    st.markdown(f"<style>{css_path.read_text(encoding='utf-8')}</style>", unsafe_allow_html=True)
 
 # ── Helpers
 def lookup_meta(name: str):
@@ -57,7 +57,7 @@ user_rank = user_item_df["user_id"].value_counts().rename_axis("user_id").reset_
 all_user_ids = user_rank.user_id.astype(int).tolist()
 
 # ── UI
-st.markdown("<h2>🛍️ Hybrid Recommender Demo</h2>", unsafe_allow_html=True)
+st.markdown("<h2> Hybrid Recommender System Demo</h2>", unsafe_allow_html=True)
 col_u, col_i = st.columns(2)
 
 with col_u:
@@ -77,7 +77,7 @@ with col_i:
 k = st.slider("Top‑K", 1, 10, 3)
 if st.button("🚀 Show Recommendations", disabled=len(chosen) == 0 and len(rule_items) > 0):
     st.markdown("---")
-    with st.spinner("Fetching ..."):
+    with st.spinner("Fetching ... please wait!"):
         # AI
         ai_rec = []
         try:
@@ -103,8 +103,14 @@ if st.button("🚀 Show Recommendations", disabled=len(chosen) == 0 and len(rule
             if len(fp_rec) >= k:
                 break
 
-    render_block("🧠 AI (NCF) Recommendations:", ai_rec)
-    render_block("🔗 Products frequently bought together:", fp_rec)
+    col1, col2 = st.columns(2)
+
+    with col1:
+        render_block("AI (NCF) Recommendations:", ai_rec)
+
+    with col2:
+        render_block("FP-Growth Suggestions:", fp_rec)
+
     st.markdown("---")
 
 st.caption("Powered by FP‑Growth + NCF")
