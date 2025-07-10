@@ -1,5 +1,3 @@
-{{ config(materialized='view') }}
-
 SELECT
     CustomerID AS user_id,
     StockCode AS item_id
