@@ -23,18 +23,15 @@ class NCF(torch.nn.Module):
 
 
 class DLRecommender:
-    """Neural Collaborative Filtering inference wrapper."""
-
     def __init__(self, ckpt_path: str | Path):
         ckpt = torch.load(ckpt_path, map_location="cpu", weights_only=False)
 
-        # Harmonize user2idx → int keys
         self.user2idx: Dict[int, int] = {}
         for k, v in ckpt["user2idx"].items():
             try:
                 self.user2idx[int(k)] = v
             except ValueError:
-                continue  # skip non‑int keys
+                continue 
 
         self.item2idx: Dict[str, int] = {str(k): int(v) for k, v in ckpt["item2idx"].items()}
         self.idx2item: Dict[int, str] = {v: k for k, v in self.item2idx.items()}
@@ -45,7 +42,6 @@ class DLRecommender:
         self.model = NCF(n_users, n_items).eval()
         self.model.load_state_dict(ckpt["model"])
 
-    # ------------------------------------------------------------------
     @torch.inference_mode()
     def recommend(self, user_id: int | str, top_k: int = 5) -> List[str]:
         try:

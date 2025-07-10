@@ -8,9 +8,6 @@ import pandas as pd
 
 
 class FPGrowthRecommender:
-    """FP‑Growth rule‑based recommender (single‑item lookup)."""
-
-    # ────────────────────────────────────────────────────────
     def __init__(self, rule_path: str | Path):
         rule_path = Path(rule_path)
         if not rule_path.exists():
@@ -20,7 +17,6 @@ class FPGrowthRecommender:
         if not {"antecedent", "consequent", "confidence"}.issubset(rules.columns):
             raise ValueError("rules.csv must have antecedent, consequent, confidence columns")
 
-        # Parse antecedent safely → list[str] (lowercased)
         def parse(val) -> List[str]:
             try:
                 res = ast.literal_eval(str(val))
@@ -28,13 +24,12 @@ class FPGrowthRecommender:
                     return [str(i).strip().lower() for i in res]
             except Exception:
                 pass
-            return [str(val).strip().lower()]  # fallback single item
+            return [str(val).strip().lower()]
 
         rules["antecedent"] = rules["antecedent"].apply(parse)
         rules["consequent"] = rules["consequent"].astype(str).str.lower().str.strip()
         rules = rules.sort_values("confidence", ascending=False, ignore_index=True)
 
-        # Build lookup: each single item → list[(consequent, confidence)]
         self._lookup: Dict[str, List[Tuple[str, float]]] = {}
         for _, row in rules.iterrows():
             for a in row["antecedent"]:
@@ -45,7 +40,6 @@ class FPGrowthRecommender:
         key = item.strip().lower()
         pool = self._lookup.get(key)
 
-        # fuzzy: try first antecedent containing key
         if pool is None:
             pool = next((v for k, v in self._lookup.items() if key in k), [])
 
@@ -63,5 +57,4 @@ class FPGrowthRecommender:
 
     # ────────────────────────────────────────────────────────
     def available_items(self) -> List[str]:
-        """Return sorted list of all items that have outgoing rules."""
         return sorted(self._lookup.keys())
