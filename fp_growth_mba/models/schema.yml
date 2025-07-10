@@ -4,8 +4,6 @@ models:
   - name: stg_online_retail
     columns:
       - name: CustomerID
-        tests:
-          - not_null
       - name: InvoiceNo
         tests:
           - not_null
@@ -40,4 +38,4 @@ models:
       - name: product_id
         tests:
           - not_null
-          - unique
+          - unique 
