@@ -456,3 +456,25 @@
 2025-07-09 14:58:29 | INFO     | backend.main | by‑item request item=wooden heart christmas scandinavian top_k=4
 2025-07-09 14:58:29 | INFO     | backend.main | GET /recommend/by-item | 200 | 1.65 ms
 2025-07-09 14:58:29 | INFO     | uvicorn.access | 127.0.0.1:52754 - "GET /recommend/by-item?item=wooden+heart+christmas+scandinavian&top_k=4 HTTP/1.1" 200
+2025-07-10 16:33:27 | INFO     | uvicorn.error | Started server process [32640]
+2025-07-10 16:33:27 | INFO     | uvicorn.error | Waiting for application startup.
+2025-07-10 16:33:27 | INFO     | uvicorn.error | Application startup complete.
+2025-07-10 16:33:54 | INFO     | backend.main | by‑user request user_id=14911 top_k=3
+2025-07-10 16:33:54 | INFO     | backend.main | GET /recommend/by-user | 200 | 39.22 ms
+2025-07-10 16:33:54 | INFO     | uvicorn.access | 127.0.0.1:52624 - "GET /recommend/by-user?user_id=14911&top_k=3 HTTP/1.1" 200
+2025-07-10 16:33:57 | INFO     | backend.main | by‑item request item=charlotte bag suki design top_k=3
+2025-07-10 16:33:57 | INFO     | backend.main | GET /recommend/by-item | 200 | 1.48 ms
+2025-07-10 16:33:57 | INFO     | uvicorn.access | 127.0.0.1:52627 - "GET /recommend/by-item?item=charlotte+bag+suki+design&top_k=3 HTTP/1.1" 200
+2025-07-10 16:33:59 | INFO     | backend.main | by‑item request item=paper chain kit vintage christmas top_k=3
+2025-07-10 16:33:59 | INFO     | backend.main | GET /recommend/by-item | 200 | 1.52 ms
+2025-07-10 16:33:59 | INFO     | uvicorn.access | 127.0.0.1:52629 - "GET /recommend/by-item?item=paper+chain+kit+vintage+christmas&top_k=3 HTTP/1.1" 200
+2025-07-10 16:34:01 | INFO     | backend.main | by‑item request item=paper chain kit 50's christmas top_k=3
+2025-07-10 16:34:01 | INFO     | backend.main | GET /recommend/by-item | 200 | 1.88 ms
+2025-07-10 16:34:01 | INFO     | uvicorn.access | 127.0.0.1:52632 - "GET /recommend/by-item?item=paper+chain+kit+50%27s+christmas&top_k=3 HTTP/1.1" 200
+2025-07-10 16:34:03 | INFO     | backend.main | by‑item request item=set of 20 vintage christmas napkins top_k=3
+2025-07-10 16:34:03 | INFO     | backend.main | GET /recommend/by-item | 200 | 1.70 ms
+2025-07-10 16:34:03 | INFO     | uvicorn.access | 127.0.0.1:52634 - "GET /recommend/by-item?item=set+of+20+vintage+christmas+napkins&top_k=3 HTTP/1.1" 200
+2025-07-10 16:34:23 | INFO     | uvicorn.error | Shutting down
+2025-07-10 16:34:23 | INFO     | uvicorn.error | Waiting for application shutdown.
+2025-07-10 16:34:23 | INFO     | uvicorn.error | Application shutdown complete.
+2025-07-10 16:34:23 | INFO     | uvicorn.error | Finished server process [32640]
