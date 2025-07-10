@@ -1,5 +1,3 @@
-{{ config(materialized='view') }}
-
 WITH base AS (
     SELECT
         InvoiceNo,
