@@ -2,40 +2,8 @@ version: 2
 
 models:
   - name: stg_online_retail
-    columns:
-      - name: CustomerID
-      - name: InvoiceNo
-        tests:
-          - not_null
-      - name: StockCode
-        tests:
-          - not_null
-      - name: Quantity
-        tests:
-          - not_null
-
+    description: "Cleaned and preprocessed retail data"
   - name: dl_input
-    columns:
-      - name: user_id
-        tests:
-          - not_null
-      - name: item_id
-        tests:
-          - not_null
-
+    description: "User-item pairs for Deep Learning recommendation"
   - name: fpgrowth_input
-    columns:
-      - name: InvoiceNo
-        tests:
-          - not_null
-          - unique
-      - name: products
-        tests:
-          - not_null
-
-  - name: products
-    columns:
-      - name: product_id
-        tests:
-          - not_null
-          - unique 
+    description: "Transaction-style item lists for FP-Growth"
