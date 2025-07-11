@@ -1,13 +1,15 @@
-WITH base AS (
-    SELECT
-        InvoiceNo,
-        StockCode
-    FROM {{ ref('stg_online_retail') }}
-    WHERE InvoiceNo IS NOT NULL AND StockCode IS NOT NULL
+{{ config(materialized='table') }}
+
+with raw as (
+    select
+        InvoiceNo as transaction_id,
+        lower(trim(Description)) as item_name
+    from {{ ref('stg_online_retail') }}
+    where Quantity > 0 and Description is not null
 )
 
-SELECT
-    InvoiceNo,
-    group_concat(StockCode, ',') AS products
-FROM base
-GROUP BY InvoiceNo
+select
+    transaction_id,
+    group_concat(item_name, ',') as items
+from raw
+group by transaction_id
