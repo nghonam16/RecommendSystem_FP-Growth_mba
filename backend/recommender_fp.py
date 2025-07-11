@@ -35,8 +35,7 @@ class FPGrowthRecommender:
             for a in row["antecedent"]:
                 self._lookup.setdefault(a, []).append((row["consequent"], row["confidence"]))
 
-    # ────────────────────────────────────────────────────────
-    def recommend(self, item: str, top_k: int = 5) -> List[str]:
+    def recommend(self, item: str, top_k: int = 5) -> List[Dict[str, float]]:
         key = item.strip().lower()
         pool = self._lookup.get(key)
 
@@ -47,14 +46,14 @@ class FPGrowthRecommender:
             return []
 
         seen, results = set(), []
-        for cons, _ in pool:
+        for cons, conf in pool:
             if cons not in seen:
                 seen.add(cons)
-                results.append(cons)
+                results.append((cons, conf))
             if len(results) >= top_k:
                 break
-        return results
 
-    # ────────────────────────────────────────────────────────
+        return [{"item": cons, "score": round(conf, 4)} for cons, conf in results]
+
     def available_items(self) -> List[str]:
         return sorted(self._lookup.keys())

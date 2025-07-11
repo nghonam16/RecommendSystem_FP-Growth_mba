@@ -31,7 +31,7 @@ class DLRecommender:
             try:
                 self.user2idx[int(k)] = v
             except ValueError:
-                continue 
+                continue
 
         self.item2idx: Dict[str, int] = {str(k): int(v) for k, v in ckpt["item2idx"].items()}
         self.idx2item: Dict[int, str] = {v: k for k, v in self.item2idx.items()}
@@ -43,7 +43,7 @@ class DLRecommender:
         self.model.load_state_dict(ckpt["model"])
 
     @torch.inference_mode()
-    def recommend(self, user_id: int | str, top_k: int = 5) -> List[str]:
+    def recommend(self, user_id: int | str, top_k: int = 5) -> List[Dict[str, float]]:
         try:
             uid_key = int(user_id)
         except ValueError:
@@ -57,5 +57,10 @@ class DLRecommender:
         i_idx = torch.arange(len(self.item2idx), dtype=torch.long)
 
         scores = self.model(u_idx, i_idx)
-        top_idx = torch.topk(scores, top_k).indices.tolist()
-        return [self.idx2item[i] for i in top_idx]
+        scores = scores.numpy().flatten()
+        top_idx = torch.topk(torch.tensor(scores), top_k).indices.tolist()
+
+        return [
+            {"item": self.idx2item[i], "score": round(float(scores[i]), 4)}
+            for i in top_idx
+        ]
