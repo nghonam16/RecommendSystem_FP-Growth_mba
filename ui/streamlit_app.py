@@ -39,17 +39,24 @@ def lookup_meta(name: str):
     row = products_df[products_df.item_id.str.lower() == name.lower()]
     return {"name": name, "price": row.iloc[0].price, "category": row.iloc[0].category} if not row.empty else {"name": name, "price": None, "category": None}
 
-def html_card(meta):
+def html_card(meta, score=None):
     price = f"<br><span class='item-price'>💰 ${meta['price']:.2f}</span>" if meta['price'] else ""
     cat   = f"<br><span class='item-cat'>🏷️ {meta['category']}</span>"     if meta['category'] else ""
-    return f"<div class='recommend-item'>📦 <strong>{meta['name']}</strong>{price}{cat}</div>"
+    rank  = f"<br><span class='item-rank'>⭐ Score: {score:.4f}</span>"     if score is not None else ""
+    return f"<div class='recommend-item'>📦 <strong>{meta['name']}</strong>{price}{cat}{rank}</div>"
 
 def render_block(title, items):
     st.markdown(f"<div class='recommend-box'><h3>{title}</h3><div>", unsafe_allow_html=True)
     if not items:
         st.markdown("<em>Empty.</em>", unsafe_allow_html=True)
     for it in items:
-        st.markdown(html_card(lookup_meta(it)), unsafe_allow_html=True)
+        if isinstance(it, dict):
+            name = it.get("item", "")
+            score = it.get("score", None)
+        else:
+            name = it
+            score = None
+    st.markdown(html_card(lookup_meta(name), score), unsafe_allow_html=True)
     st.markdown("</div></div>", unsafe_allow_html=True)
 
 # ── User list
