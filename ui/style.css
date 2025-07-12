@@ -70,7 +70,6 @@ h2 {
     font-size: 14px;
 }
 
-/* Nút bấm giống Tiki style */
 .stButton > button {
     background-color: #189eff;
     color: white;
@@ -89,12 +88,10 @@ h2 {
     transform: translateY(-1px);
 }
 
-/* Dropdown + MultiSelect spacing */
 [data-baseweb="select"] {
     margin-bottom: 18px;
 }
 
-/* Responsive tweaks nếu cần */
 @media (max-width: 768px) {
     h2 {
         font-size: 24px;
