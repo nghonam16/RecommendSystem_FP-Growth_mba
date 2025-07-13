@@ -56,7 +56,7 @@ def render_block(title, items):
         else:
             name = it
             score = None
-    st.markdown(html_card(lookup_meta(name), score), unsafe_allow_html=True)
+        st.markdown(html_card(lookup_meta(name), score), unsafe_allow_html=True)
     st.markdown("</div></div>", unsafe_allow_html=True)
 
 # ── User list
@@ -85,7 +85,7 @@ k = st.slider("Top‑K", 1, 10, 3)
 if st.button("🚀 Show Recommendations", disabled=len(chosen) == 0 and len(rule_items) > 0):
     st.markdown("---")
     with st.spinner("Fetching ... please wait!"):
-        # AI
+        # AI recommendations
         ai_rec = []
         try:
             r = requests.get(f"{API_URL}/recommend/by-user", params={"user_id": sel_user, "top_k": k}, timeout=30)
@@ -93,7 +93,7 @@ if st.button("🚀 Show Recommendations", disabled=len(chosen) == 0 and len(rule
         except Exception as e:
             st.error(f"NCF error: {e}")
 
-        # FP‑Growth
+        # FP‑Growth recommendations
         fp_pool = []
         for p in chosen:
             try:
@@ -102,11 +102,16 @@ if st.button("🚀 Show Recommendations", disabled=len(chosen) == 0 and len(rule
             except Exception as e:
                 st.error(f"FP‑Growth error for '{p}': {e}")
 
-        # deduplicate
+        # Deduplicate by item name and filter out already selected
+        chosen_lower = set(i.strip().lower() for i in chosen)
+        fp_seen = set()
         fp_rec = []
+
         for x in fp_pool:
-            if x not in chosen and x not in fp_rec:
+            name = x.get("item", "").strip().lower()
+            if name and name not in chosen_lower and name not in fp_seen:
                 fp_rec.append(x)
+                fp_seen.add(name)
             if len(fp_rec) >= k:
                 break
 
