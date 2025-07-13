@@ -24,6 +24,10 @@ class NCF(torch.nn.Module):
 
 class DLRecommender:
     def __init__(self, ckpt_path: str | Path):
+        ckpt_path = Path(ckpt_path)
+        if not ckpt_path.exists():
+            raise FileNotFoundError(f"Model checkpoint not found: {ckpt_path}")
+
         ckpt = torch.load(ckpt_path, map_location="cpu", weights_only=False)
 
         self.user2idx: Dict[int, int] = {}
@@ -57,10 +61,13 @@ class DLRecommender:
         i_idx = torch.arange(len(self.item2idx), dtype=torch.long)
 
         scores = self.model(u_idx, i_idx)
-        scores = scores.numpy().flatten()
-        top_idx = torch.topk(torch.tensor(scores), top_k).indices.tolist()
+        scores_np = scores.detach().numpy()
 
-        return [
-            {"item": self.idx2item[i], "score": round(float(scores[i]), 4)}
-            for i in top_idx
-        ]
+        top_idx = torch.topk(scores, top_k).indices.tolist()
+
+        results = []
+        for i in top_idx:
+            item = self.idx2item.get(i)
+            if item:
+                results.append({"item": item, "score": round(float(scores_np[i]), 4)})
+        return results

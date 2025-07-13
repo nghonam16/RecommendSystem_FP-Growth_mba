@@ -3,7 +3,6 @@ from __future__ import annotations
 import ast
 from pathlib import Path
 from typing import List, Dict, Tuple
-
 import pandas as pd
 
 
@@ -33,21 +32,26 @@ class FPGrowthRecommender:
         self._lookup: Dict[str, List[Tuple[str, float]]] = {}
         for _, row in rules.iterrows():
             for a in row["antecedent"]:
-                self._lookup.setdefault(a, []).append((row["consequent"], row["confidence"]))
+                if row["consequent"]:
+                    self._lookup.setdefault(a, []).append((row["consequent"], row["confidence"]))
 
     def recommend(self, item: str, top_k: int = 5) -> List[Dict[str, float]]:
         key = item.strip().lower()
         pool = self._lookup.get(key)
 
         if pool is None:
-            pool = next((v for k, v in self._lookup.items() if key in k), [])
+            # fallback: partial match
+            pool = []
+            for k, v in self._lookup.items():
+                if key in k:
+                    pool.extend(v)
 
         if not pool:
             return []
 
         seen, results = set(), []
         for cons, conf in pool:
-            if cons not in seen:
+            if cons not in seen and cons != key:
                 seen.add(cons)
                 results.append((cons, conf))
             if len(results) >= top_k:
