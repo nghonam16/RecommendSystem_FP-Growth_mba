@@ -776,3 +776,195 @@
 2025-07-11 15:52:31 | INFO     | uvicorn.error | Waiting for application shutdown.
 2025-07-11 15:52:31 | INFO     | uvicorn.error | Application shutdown complete.
 2025-07-11 15:52:31 | INFO     | uvicorn.error | Finished server process [26312]
+2025-07-11 18:21:23 | INFO     | uvicorn.error | Started server process [8260]
+2025-07-11 18:21:23 | INFO     | uvicorn.error | Waiting for application startup.
+2025-07-11 18:21:23 | INFO     | uvicorn.error | Application startup complete.
+2025-07-11 18:21:35 | INFO     | backend.main | by‑item request item=alarm clock bakelike green top_k=10
+2025-07-11 18:21:35 | INFO     | backend.main | GET /recommend/by-item | 200 | 4.80 ms
+2025-07-11 18:21:35 | INFO     | uvicorn.access | 127.0.0.1:51227 - "GET /recommend/by-item?item=alarm%20clock%20bakelike%20green&top_k=10%0A HTTP/1.1" 200
+2025-07-11 18:21:47 | INFO     | uvicorn.error | Shutting down
+2025-07-11 18:21:47 | INFO     | uvicorn.error | Waiting for application shutdown.
+2025-07-11 18:21:47 | INFO     | uvicorn.error | Application shutdown complete.
+2025-07-11 18:21:47 | INFO     | uvicorn.error | Finished server process [8260]
+2025-07-11 22:35:01 | INFO     | uvicorn.error | Started server process [20900]
+2025-07-11 22:35:01 | INFO     | uvicorn.error | Waiting for application startup.
+2025-07-11 22:35:01 | INFO     | uvicorn.error | Application startup complete.
+2025-07-11 22:35:08 | INFO     | backend.main | by‑item request item=alarm clock bakelike green top_k=10
+2025-07-11 22:35:08 | INFO     | backend.main | GET /recommend/by-item | 200 | 6.74 ms
+2025-07-11 22:35:08 | INFO     | uvicorn.access | 127.0.0.1:56847 - "GET /recommend/by-item?item=alarm%20clock%20bakelike%20green&top_k=10%0A HTTP/1.1" 200
+2025-07-11 22:35:22 | INFO     | backend.main | by‑item request item=alarm clock bakelike green top_k=1
+2025-07-11 22:35:22 | INFO     | backend.main | GET /recommend/by-item | 200 | 2.44 ms
+2025-07-11 22:35:22 | INFO     | uvicorn.access | 127.0.0.1:56856 - "GET /recommend/by-item?item=alarm%20clock%20bakelike%20green&top_k=1%0A HTTP/1.1" 200
+2025-07-11 22:35:31 | INFO     | uvicorn.error | Shutting down
+2025-07-11 22:35:31 | INFO     | uvicorn.error | Waiting for application shutdown.
+2025-07-11 22:35:31 | INFO     | uvicorn.error | Application shutdown complete.
+2025-07-11 22:35:31 | INFO     | uvicorn.error | Finished server process [20900]
+2025-07-13 20:19:17 | INFO     | uvicorn.error | Started server process [11768]
+2025-07-13 20:19:17 | INFO     | uvicorn.error | Waiting for application startup.
+2025-07-13 20:19:17 | INFO     | uvicorn.error | Application startup complete.
+2025-07-13 20:19:26 | INFO     | backend.main | by‑item request item=alarm clock bakelike green top_k=1
+2025-07-13 20:19:26 | INFO     | backend.main | GET /recommend/by-item | 200 | 2.42 ms
+2025-07-13 20:19:26 | INFO     | uvicorn.access | 127.0.0.1:49990 - "GET /recommend/by-item?item=alarm%20clock%20bakelike%20green&top_k=1%0A HTTP/1.1" 200
+2025-07-13 20:19:33 | INFO     | backend.main | by‑item request item=alarm clock bakelike green top_k=11
+2025-07-13 20:19:33 | INFO     | backend.main | GET /recommend/by-item | 200 | 1.25 ms
+2025-07-13 20:19:33 | INFO     | uvicorn.access | 127.0.0.1:49997 - "GET /recommend/by-item?item=alarm%20clock%20bakelike%20green&top_k=11%0A HTTP/1.1" 200
+2025-07-13 20:19:37 | INFO     | backend.main | by‑item request item=alarm clock bakelike green top_k=2
+2025-07-13 20:19:37 | INFO     | backend.main | GET /recommend/by-item | 200 | 1.43 ms
+2025-07-13 20:19:37 | INFO     | uvicorn.access | 127.0.0.1:49997 - "GET /recommend/by-item?item=alarm%20clock%20bakelike%20green&top_k=2 HTTP/1.1" 200
+2025-07-13 20:19:45 | INFO     | uvicorn.error | Shutting down
+2025-07-13 20:19:45 | INFO     | uvicorn.error | Waiting for application shutdown.
+2025-07-13 20:19:45 | INFO     | uvicorn.error | Application shutdown complete.
+2025-07-13 20:19:45 | INFO     | uvicorn.error | Finished server process [11768]
+2025-07-13 20:22:49 | INFO     | uvicorn.error | Started server process [1216]
+2025-07-13 20:22:49 | INFO     | uvicorn.error | Waiting for application startup.
+2025-07-13 20:22:49 | INFO     | uvicorn.error | Application startup complete.
+2025-07-13 20:23:28 | INFO     | backend.main | by‑user request user_id=14911 top_k=3
+2025-07-13 20:23:28 | INFO     | backend.main | GET /recommend/by-user | 200 | 38.73 ms
+2025-07-13 20:23:28 | INFO     | uvicorn.access | 127.0.0.1:50210 - "GET /recommend/by-user?user_id=14911&top_k=3 HTTP/1.1" 200
+2025-07-13 20:23:30 | INFO     | backend.main | by‑item request item=charlotte bag suki design top_k=3
+2025-07-13 20:23:30 | INFO     | backend.main | GET /recommend/by-item | 200 | 1.47 ms
+2025-07-13 20:23:30 | INFO     | uvicorn.access | 127.0.0.1:50213 - "GET /recommend/by-item?item=charlotte+bag+suki+design&top_k=3 HTTP/1.1" 200
+2025-07-13 20:23:32 | INFO     | backend.main | by‑item request item=paper chain kit 50's christmas top_k=3
+2025-07-13 20:23:32 | INFO     | backend.main | GET /recommend/by-item | 200 | 1.77 ms
+2025-07-13 20:23:32 | INFO     | uvicorn.access | 127.0.0.1:50215 - "GET /recommend/by-item?item=paper+chain+kit+50%27s+christmas&top_k=3 HTTP/1.1" 200
+2025-07-13 20:23:42 | INFO     | backend.main | by‑user request user_id=14911 top_k=4
+2025-07-13 20:23:42 | INFO     | backend.main | GET /recommend/by-user | 200 | 3.87 ms
+2025-07-13 20:23:42 | INFO     | uvicorn.access | 127.0.0.1:50217 - "GET /recommend/by-user?user_id=14911&top_k=4 HTTP/1.1" 200
+2025-07-13 20:23:44 | INFO     | backend.main | by‑item request item=charlotte bag suki design top_k=4
+2025-07-13 20:23:44 | INFO     | backend.main | GET /recommend/by-item | 200 | 1.08 ms
+2025-07-13 20:23:44 | INFO     | uvicorn.access | 127.0.0.1:50220 - "GET /recommend/by-item?item=charlotte+bag+suki+design&top_k=4 HTTP/1.1" 200
+2025-07-13 20:23:46 | INFO     | backend.main | by‑item request item=paper chain kit 50's christmas top_k=4
+2025-07-13 20:23:46 | INFO     | backend.main | GET /recommend/by-item | 200 | 1.21 ms
+2025-07-13 20:23:46 | INFO     | uvicorn.access | 127.0.0.1:50223 - "GET /recommend/by-item?item=paper+chain+kit+50%27s+christmas&top_k=4 HTTP/1.1" 200
+2025-07-13 20:24:01 | INFO     | backend.main | by‑user request user_id=16931 top_k=5
+2025-07-13 20:24:01 | INFO     | backend.main | GET /recommend/by-user | 200 | 4.08 ms
+2025-07-13 20:24:01 | INFO     | uvicorn.access | 127.0.0.1:50225 - "GET /recommend/by-user?user_id=16931&top_k=5 HTTP/1.1" 200
+2025-07-13 20:24:03 | INFO     | backend.main | by‑item request item=heart of wicker small top_k=5
+2025-07-13 20:24:03 | INFO     | backend.main | GET /recommend/by-item | 200 | 1.74 ms
+2025-07-13 20:24:03 | INFO     | uvicorn.access | 127.0.0.1:50227 - "GET /recommend/by-item?item=heart+of+wicker+small&top_k=5 HTTP/1.1" 200
+2025-07-13 20:24:05 | INFO     | backend.main | by‑item request item=white hanging heart t-light holder top_k=5
+2025-07-13 20:24:05 | INFO     | backend.main | GET /recommend/by-item | 200 | 1.35 ms
+2025-07-13 20:24:05 | INFO     | uvicorn.access | 127.0.0.1:50229 - "GET /recommend/by-item?item=white+hanging+heart+t-light+holder&top_k=5 HTTP/1.1" 200
+2025-07-13 20:24:08 | INFO     | backend.main | by‑item request item=christmas craft little friends top_k=5
+2025-07-13 20:24:08 | INFO     | backend.main | GET /recommend/by-item | 200 | 1.08 ms
+2025-07-13 20:24:08 | INFO     | uvicorn.access | 127.0.0.1:50231 - "GET /recommend/by-item?item=christmas+craft+little+friends&top_k=5 HTTP/1.1" 200
+2025-07-13 20:24:10 | INFO     | backend.main | by‑item request item=lunch bag cars blue top_k=5
+2025-07-13 20:24:10 | INFO     | backend.main | GET /recommend/by-item | 200 | 1.35 ms
+2025-07-13 20:24:10 | INFO     | uvicorn.access | 127.0.0.1:50233 - "GET /recommend/by-item?item=lunch+bag+cars+blue&top_k=5 HTTP/1.1" 200
+2025-07-13 20:24:42 | INFO     | uvicorn.error | Shutting down
+2025-07-13 20:24:42 | INFO     | uvicorn.error | Waiting for application shutdown.
+2025-07-13 20:24:42 | INFO     | uvicorn.error | Application shutdown complete.
+2025-07-13 20:24:42 | INFO     | uvicorn.error | Finished server process [1216]
+2025-07-13 20:28:10 | INFO     | uvicorn.error | Started server process [13228]
+2025-07-13 20:28:10 | INFO     | uvicorn.error | Waiting for application startup.
+2025-07-13 20:28:10 | INFO     | uvicorn.error | Application startup complete.
+2025-07-13 20:28:20 | INFO     | backend.main | by‑item request item=sugar top_k=5
+2025-07-13 20:28:20 | INFO     | backend.main | GET /recommend/by-item | 200 | 3.82 ms
+2025-07-13 20:28:20 | INFO     | uvicorn.access | 127.0.0.1:50337 - "GET /recommend/by-item?item=sugar&top_k=5 HTTP/1.1" 200
+2025-07-13 20:29:38 | INFO     | uvicorn.error | Shutting down
+2025-07-13 20:29:38 | INFO     | uvicorn.error | Waiting for application shutdown.
+2025-07-13 20:29:38 | INFO     | uvicorn.error | Application shutdown complete.
+2025-07-13 20:29:38 | INFO     | uvicorn.error | Finished server process [13228]
+2025-07-13 20:29:40 | INFO     | uvicorn.error | Started server process [26216]
+2025-07-13 20:29:40 | INFO     | uvicorn.error | Waiting for application startup.
+2025-07-13 20:29:40 | INFO     | uvicorn.error | Application startup complete.
+2025-07-13 20:30:27 | INFO     | uvicorn.error | Shutting down
+2025-07-13 20:30:27 | INFO     | uvicorn.error | Waiting for application shutdown.
+2025-07-13 20:30:27 | INFO     | uvicorn.error | Application shutdown complete.
+2025-07-13 20:30:27 | INFO     | uvicorn.error | Finished server process [26216]
+2025-07-13 20:30:29 | INFO     | uvicorn.error | Started server process [31200]
+2025-07-13 20:30:29 | INFO     | uvicorn.error | Waiting for application startup.
+2025-07-13 20:30:29 | INFO     | uvicorn.error | Application startup complete.
+2025-07-13 20:30:34 | INFO     | uvicorn.error | Shutting down
+2025-07-13 20:30:34 | INFO     | uvicorn.error | Waiting for application shutdown.
+2025-07-13 20:30:34 | INFO     | uvicorn.error | Application shutdown complete.
+2025-07-13 20:30:34 | INFO     | uvicorn.error | Finished server process [31200]
+2025-07-13 20:30:36 | INFO     | uvicorn.error | Started server process [5096]
+2025-07-13 20:30:36 | INFO     | uvicorn.error | Waiting for application startup.
+2025-07-13 20:30:36 | INFO     | uvicorn.error | Application startup complete.
+2025-07-13 20:30:44 | INFO     | backend.main | by‑item request item=sugar top_k=5
+2025-07-13 20:30:44 | INFO     | backend.main | GET /recommend/by-item | 200 | 1.94 ms
+2025-07-13 20:30:44 | INFO     | uvicorn.access | 127.0.0.1:50399 - "GET /recommend/by-item?item=sugar&top_k=5 HTTP/1.1" 200
+2025-07-13 20:30:55 | INFO     | backend.main | by‑item request item=sugar top_k=1
+2025-07-13 20:30:55 | INFO     | backend.main | GET /recommend/by-item | 200 | 2.97 ms
+2025-07-13 20:30:55 | INFO     | uvicorn.access | 127.0.0.1:50412 - "GET /recommend/by-item?item=sugar&top_k=1 HTTP/1.1" 200
+2025-07-13 20:31:40 | INFO     | backend.main | by‑user request user_id=123 top_k=3
+2025-07-13 20:31:40 | INFO     | backend.main | GET /recommend/by-user | 200 | 1.21 ms
+2025-07-13 20:31:40 | INFO     | uvicorn.access | 127.0.0.1:50429 - "GET /recommend/by-user?user_id=123&top_k=3 HTTP/1.1" 200
+2025-07-13 20:32:34 | INFO     | backend.main | by‑user request user_id=14911 top_k=3
+2025-07-13 20:32:34 | INFO     | backend.main | GET /recommend/by-user | 200 | 20.17 ms
+2025-07-13 20:32:34 | INFO     | uvicorn.access | 127.0.0.1:50459 - "GET /recommend/by-user?user_id=14911&top_k=3 HTTP/1.1" 200
+2025-07-13 20:32:41 | INFO     | backend.main | by‑user request user_id=14911 top_k=1
+2025-07-13 20:32:41 | INFO     | backend.main | GET /recommend/by-user | 200 | 3.55 ms
+2025-07-13 20:32:41 | INFO     | uvicorn.access | 127.0.0.1:50467 - "GET /recommend/by-user?user_id=14911&top_k=1 HTTP/1.1" 200
+2025-07-13 20:32:44 | INFO     | backend.main | by‑user request user_id=14911 top_k=2
+2025-07-13 20:32:44 | INFO     | backend.main | GET /recommend/by-user | 200 | 3.49 ms
+2025-07-13 20:32:44 | INFO     | uvicorn.access | 127.0.0.1:50467 - "GET /recommend/by-user?user_id=14911&top_k=2 HTTP/1.1" 200
+2025-07-13 20:33:04 | INFO     | backend.main | by‑user request user_id=14911 top_k=3
+2025-07-13 20:33:04 | INFO     | backend.main | GET /recommend/by-user | 200 | 4.09 ms
+2025-07-13 20:33:04 | INFO     | uvicorn.access | 127.0.0.1:50482 - "GET /recommend/by-user?user_id=14911&top_k=3 HTTP/1.1" 200
+2025-07-13 20:33:06 | INFO     | backend.main | by‑item request item=charlotte bag suki design top_k=3
+2025-07-13 20:33:06 | INFO     | backend.main | GET /recommend/by-item | 200 | 1.54 ms
+2025-07-13 20:33:06 | INFO     | uvicorn.access | 127.0.0.1:50485 - "GET /recommend/by-item?item=charlotte+bag+suki+design&top_k=3 HTTP/1.1" 200
+2025-07-13 20:33:13 | INFO     | backend.main | by‑user request user_id=14911 top_k=4
+2025-07-13 20:33:13 | INFO     | backend.main | GET /recommend/by-user | 200 | 5.13 ms
+2025-07-13 20:33:13 | INFO     | uvicorn.access | 127.0.0.1:50487 - "GET /recommend/by-user?user_id=14911&top_k=4 HTTP/1.1" 200
+2025-07-13 20:33:15 | INFO     | backend.main | by‑item request item=charlotte bag suki design top_k=4
+2025-07-13 20:33:15 | INFO     | backend.main | GET /recommend/by-item | 200 | 1.42 ms
+2025-07-13 20:33:15 | INFO     | uvicorn.access | 127.0.0.1:50489 - "GET /recommend/by-item?item=charlotte+bag+suki+design&top_k=4 HTTP/1.1" 200
+2025-07-13 20:33:21 | INFO     | backend.main | by‑user request user_id=14911 top_k=4
+2025-07-13 20:33:21 | INFO     | backend.main | GET /recommend/by-user | 200 | 3.87 ms
+2025-07-13 20:33:21 | INFO     | uvicorn.access | 127.0.0.1:50492 - "GET /recommend/by-user?user_id=14911&top_k=4 HTTP/1.1" 200
+2025-07-13 20:33:23 | INFO     | backend.main | by‑item request item=charlotte bag suki design top_k=4
+2025-07-13 20:33:23 | INFO     | backend.main | GET /recommend/by-item | 200 | 2.55 ms
+2025-07-13 20:33:23 | INFO     | uvicorn.access | 127.0.0.1:50494 - "GET /recommend/by-item?item=charlotte+bag+suki+design&top_k=4 HTTP/1.1" 200
+2025-07-13 20:33:25 | INFO     | backend.main | by‑item request item=paper chain kit 50's christmas top_k=4
+2025-07-13 20:33:25 | INFO     | backend.main | GET /recommend/by-item | 200 | 1.63 ms
+2025-07-13 20:33:25 | INFO     | uvicorn.access | 127.0.0.1:50497 - "GET /recommend/by-item?item=paper+chain+kit+50%27s+christmas&top_k=4 HTTP/1.1" 200
+2025-07-13 20:33:27 | INFO     | backend.main | by‑item request item=set of 20 vintage christmas napkins top_k=4
+2025-07-13 20:33:27 | INFO     | backend.main | GET /recommend/by-item | 200 | 1.46 ms
+2025-07-13 20:33:27 | INFO     | uvicorn.access | 127.0.0.1:50499 - "GET /recommend/by-item?item=set+of+20+vintage+christmas+napkins&top_k=4 HTTP/1.1" 200
+2025-07-13 20:36:12 | INFO     | uvicorn.error | Shutting down
+2025-07-13 20:36:12 | INFO     | uvicorn.error | Waiting for application shutdown.
+2025-07-13 20:36:12 | INFO     | uvicorn.error | Application shutdown complete.
+2025-07-13 20:36:12 | INFO     | uvicorn.error | Finished server process [5096]
+2025-07-13 20:36:14 | INFO     | uvicorn.error | Started server process [11244]
+2025-07-13 20:36:14 | INFO     | uvicorn.error | Waiting for application startup.
+2025-07-13 20:36:14 | INFO     | uvicorn.error | Application startup complete.
+2025-07-13 20:37:08 | INFO     | uvicorn.error | Shutting down
+2025-07-13 20:37:08 | INFO     | uvicorn.error | Waiting for application shutdown.
+2025-07-13 20:37:08 | INFO     | uvicorn.error | Application shutdown complete.
+2025-07-13 20:37:08 | INFO     | uvicorn.error | Finished server process [11244]
+2025-07-13 20:37:10 | INFO     | uvicorn.error | Started server process [34148]
+2025-07-13 20:37:10 | INFO     | uvicorn.error | Waiting for application startup.
+2025-07-13 20:37:10 | INFO     | uvicorn.error | Application startup complete.
+2025-07-13 20:37:15 | INFO     | uvicorn.error | Shutting down
+2025-07-13 20:37:15 | INFO     | uvicorn.error | Waiting for application shutdown.
+2025-07-13 20:37:15 | INFO     | uvicorn.error | Application shutdown complete.
+2025-07-13 20:37:15 | INFO     | uvicorn.error | Finished server process [34148]
+2025-07-13 20:39:54 | INFO     | uvicorn.error | Started server process [13340]
+2025-07-13 20:39:54 | INFO     | uvicorn.error | Waiting for application startup.
+2025-07-13 20:39:54 | INFO     | uvicorn.error | Application startup complete.
+2025-07-13 20:40:10 | INFO     | uvicorn.error | Shutting down
+2025-07-13 20:40:10 | INFO     | uvicorn.error | Waiting for application shutdown.
+2025-07-13 20:40:10 | INFO     | uvicorn.error | Application shutdown complete.
+2025-07-13 20:40:10 | INFO     | uvicorn.error | Finished server process [13340]
+2025-07-13 20:40:15 | INFO     | uvicorn.error | Started server process [23352]
+2025-07-13 20:40:15 | INFO     | uvicorn.error | Waiting for application startup.
+2025-07-13 20:40:15 | INFO     | uvicorn.error | Application startup complete.
+2025-07-13 20:40:17 | INFO     | backend.main | by‑item request item=sugar top_k=3
+2025-07-13 20:40:17 | INFO     | backend.main | GET /recommend/by-item | 200 | 2.10 ms
+2025-07-13 20:40:17 | INFO     | uvicorn.access | 127.0.0.1:50618 - "GET /recommend/by-item?item=sugar&top_k=3 HTTP/1.1" 200
+2025-07-13 20:40:20 | INFO     | backend.main | by‑user request user_id=17841 top_k=5
+2025-07-13 20:40:20 | INFO     | backend.main | GET /recommend/by-user | 200 | 7.36 ms
+2025-07-13 20:40:20 | INFO     | uvicorn.access | 127.0.0.1:50618 - "GET /recommend/by-user?user_id=17841&top_k=5 HTTP/1.1" 200
+2025-07-13 20:40:39 | INFO     | backend.main | by‑user request user_id=17841 top_k=4
+2025-07-13 20:40:39 | INFO     | backend.main | GET /recommend/by-user | 200 | 4.27 ms
+2025-07-13 20:40:39 | INFO     | uvicorn.access | 127.0.0.1:50632 - "GET /recommend/by-user?user_id=17841&top_k=4 HTTP/1.1" 200
+2025-07-13 20:40:41 | INFO     | backend.main | by‑item request item=pink cream felt craft trinket box top_k=4
+2025-07-13 20:40:41 | INFO     | backend.main | GET /recommend/by-item | 200 | 1.10 ms
+2025-07-13 20:40:41 | INFO     | uvicorn.access | 127.0.0.1:50634 - "GET /recommend/by-item?item=pink+cream+felt+craft+trinket+box&top_k=4 HTTP/1.1" 200
+2025-07-13 20:42:24 | INFO     | uvicorn.error | Shutting down
+2025-07-13 20:42:25 | INFO     | uvicorn.error | Waiting for application shutdown.
+2025-07-13 20:42:25 | INFO     | uvicorn.error | Application shutdown complete.
+2025-07-13 20:42:25 | INFO     | uvicorn.error | Finished server process [23352]
