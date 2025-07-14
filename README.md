@@ -90,21 +90,25 @@ Endpoints
 Recommend by Item
 
 ```cpp
-GET /recommend/by-item?item=sugar&top_k=2
+GET /recommend/by-item?item=charlotte+bag+suki+design&top_k=3
 ```
 
 Response:
 ```cpp
 {
-    "item": "sugar",
+    "item": "charlotte bag suki design",
     "suggestions": [
         {
-            "item": "set 3 retrospot tea",
-            "score": 1.0
+            "item": "red retrospot charlotte bag",
+            "score": 0.5094
         },
         {
-            "item": "coffee",
-            "score": 1.0
+            "item": "woodland charlotte bag",
+            "score": 0.4137
+        },
+        {
+            "item": "strawberry charlotte bag",
+            "score": 0.4
         }
     ]
 }

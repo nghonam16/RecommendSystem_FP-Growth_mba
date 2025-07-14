@@ -990,3 +990,12 @@
 2025-07-14 21:17:03 | INFO     | backend.main | by‑user request user_id=17841 top_k=5
 2025-07-14 21:17:03 | INFO     | backend.main | GET /recommend/by-user | 200 | 4.39 ms
 2025-07-14 21:17:03 | INFO     | uvicorn.access | 127.0.0.1:62383 - "GET /recommend/by-user?user_id=17841&top_k=5 HTTP/1.1" 200
+2025-07-14 21:32:02 | INFO     | backend.main | by‑user request user_id=14911 top_k=3
+2025-07-14 21:32:02 | INFO     | backend.main | GET /recommend/by-user | 200 | 9.20 ms
+2025-07-14 21:32:02 | INFO     | uvicorn.access | 127.0.0.1:62706 - "GET /recommend/by-user?user_id=14911&top_k=3 HTTP/1.1" 200
+2025-07-14 21:32:04 | INFO     | backend.main | by‑item request item=charlotte bag suki design top_k=3
+2025-07-14 21:32:04 | INFO     | backend.main | GET /recommend/by-item | 200 | 1.80 ms
+2025-07-14 21:32:04 | INFO     | uvicorn.access | 127.0.0.1:62708 - "GET /recommend/by-item?item=charlotte+bag+suki+design&top_k=3 HTTP/1.1" 200
+2025-07-14 21:37:07 | INFO     | backend.main | by‑item request item=charlotte bag suki design top_k=3
+2025-07-14 21:37:07 | INFO     | backend.main | GET /recommend/by-item | 200 | 2.12 ms
+2025-07-14 21:37:07 | INFO     | uvicorn.access | 127.0.0.1:62782 - "GET /recommend/by-item?item=charlotte+bag+suki+design&top_k=3 HTTP/1.1" 200
