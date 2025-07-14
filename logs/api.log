@@ -968,3 +968,25 @@
 2025-07-13 20:42:25 | INFO     | uvicorn.error | Waiting for application shutdown.
 2025-07-13 20:42:25 | INFO     | uvicorn.error | Application shutdown complete.
 2025-07-13 20:42:25 | INFO     | uvicorn.error | Finished server process [23352]
+2025-07-14 21:08:02 | INFO     | uvicorn.error | Started server process [29408]
+2025-07-14 21:08:02 | INFO     | uvicorn.error | Waiting for application startup.
+2025-07-14 21:08:02 | INFO     | uvicorn.error | Application startup complete.
+2025-07-14 21:09:25 | INFO     | uvicorn.error | Shutting down
+2025-07-14 21:09:25 | INFO     | uvicorn.error | Waiting for application shutdown.
+2025-07-14 21:09:25 | INFO     | uvicorn.error | Application shutdown complete.
+2025-07-14 21:09:25 | INFO     | uvicorn.error | Finished server process [29408]
+2025-07-14 21:12:13 | INFO     | uvicorn.error | Started server process [31400]
+2025-07-14 21:12:13 | INFO     | uvicorn.error | Waiting for application startup.
+2025-07-14 21:12:13 | INFO     | uvicorn.error | Application startup complete.
+2025-07-14 21:12:22 | INFO     | backend.main | by‑item request item=milk top_k=3
+2025-07-14 21:12:22 | INFO     | backend.main | GET /recommend/by-item | 200 | 4.55 ms
+2025-07-14 21:12:22 | INFO     | uvicorn.access | 127.0.0.1:62208 - "GET /recommend/by-item?item=milk&top_k=3 HTTP/1.1" 200
+2025-07-14 21:12:39 | INFO     | backend.main | by‑item request item=sugar top_k=3
+2025-07-14 21:12:39 | INFO     | backend.main | GET /recommend/by-item | 200 | 1.70 ms
+2025-07-14 21:12:39 | INFO     | uvicorn.access | 127.0.0.1:62222 - "GET /recommend/by-item?item=sugar&top_k=3 HTTP/1.1" 200
+2025-07-14 21:12:57 | INFO     | backend.main | by‑user request user_id=17841 top_k=5
+2025-07-14 21:12:57 | INFO     | backend.main | GET /recommend/by-user | 200 | 47.42 ms
+2025-07-14 21:12:57 | INFO     | uvicorn.access | 127.0.0.1:62227 - "GET /recommend/by-user?user_id=17841&top_k=5 HTTP/1.1" 200
+2025-07-14 21:17:03 | INFO     | backend.main | by‑user request user_id=17841 top_k=5
+2025-07-14 21:17:03 | INFO     | backend.main | GET /recommend/by-user | 200 | 4.39 ms
+2025-07-14 21:17:03 | INFO     | uvicorn.access | 127.0.0.1:62383 - "GET /recommend/by-user?user_id=17841&top_k=5 HTTP/1.1" 200
